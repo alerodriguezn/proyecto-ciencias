@@ -1,101 +1,70 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { GiPrism, GiCircuitry, GiRocket, GiWaves, } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const guides = [
+    {
+      name: "newton-disk",
+      title: "Óptica y los fenómenos cotidianos",
+      icon: GiPrism,
+      color: "bg-gradient-to-br from-purple-400 to-pink-500",
+    },
+    {
+      name: "circuit-simulator",
+      title: "¡Explora el Mundo de la Electricidad y los Circuitos: Una Aventura para Niños Curiosos!",
+      icon: GiCircuitry,
+      color: "bg-gradient-to-br from-blue-400 to-green-500",
+    },
+    {
+      name: "rocket-simulator",
+      title: "Simulador de Cohete",
+      icon: GiRocket,
+      color: "bg-gradient-to-br from-red-400 to-orange-500",
+    },
+    {
+      name: "noise-simulator",
+      title: "Actividad de Ruido",
+      icon: GiWaves,
+      color: "bg-gradient-to-br from-green-400 to-yellow-500",
+    }
+   
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-b from-blue-50 to-purple-50 py-8">
+      <h1 className="text-4xl font-bold text-center mb-8 text-purple-600">
+        ¡Aventuras Científicas! 🚀
+      </h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl px-4">
+        {guides.map((guide) => (
+          <motion.div
+            key={guide.name}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <Link
+              href={`/guide/${guide.name}`}
+              className={`${guide.color} aspect-square rounded-2xl shadow-lg transition-all duration-300 flex flex-col items-center justify-center p-6 text-center text-xl font-semibold gap-4 text-white hover:shadow-xl`}
+            >
+              <div className="flex flex-col items-center justify-center gap-4 h-full">
+                <span className="text-2xl">{guide.title}</span>
+                {guide.icon && (
+                  <motion.div
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  >
+                    <guide.icon size={64} />
+                  </motion.div>
+                )}
+              </div>
+            </Link>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }
