@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCar, FaMusic, FaGlassCheers, FaBook, FaCogs } from "react-icons/fa";
+import Image from "next/image";
 
 const DragDropActivity = () => {
 
@@ -10,11 +10,12 @@ const DragDropActivity = () => {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const activities = [
-    { id: 1, name: <FaCar size={24} />, isNoise: true },
-    { id: 2, name: <FaMusic size={24} />, isNoise: false },
-    { id: 3, name: <FaGlassCheers size={24} />, isNoise: true },
-    { id: 4, name: <FaBook size={24} />, isNoise: false },
-    { id: 5, name: <FaCogs size={24} />, isNoise: true },
+    { id: 1, name: <Image src="/imgs/trafico.png" alt="Car" className="w-40" width={200} height={200} />, isNoise: true },
+    { id: 2, name: <Image src="/imgs/lavadora.png" alt="Lavadora" className="w-40" width={200} height={200} />, isNoise: false },
+    { id: 3, name: <Image src="/imgs/lluvia.png" alt="Lluvia" className="w-40" width={200} height={200} />, isNoise: false },
+    { id: 4, name: <Image src="/imgs/maquinaria.png" alt="Maquinaria" className="w-40"width={200} height={200} />, isNoise: true },
+    { id: 5, name: <Image src="/imgs/yoga.png" alt="Yoga" className="w-40" width={200} height={200} />, isNoise: false },
+    { id: 6, name: <Image src="/imgs/concierto.png" alt="Concierto" className="w-40" width={200} height={200} />, isNoise: true },
   ];
 
   const [selectedActivities, setSelectedActivities] = useState<number[]>([]);
@@ -45,7 +46,7 @@ const DragDropActivity = () => {
       </h1>
       <div className="flex gap-4 flex-wrap mb-6">
         {activities.map((activity) => (
-          (!isCompleted || !activity.isNoise) && !selectedActivities.includes(activity.id) && (
+          !selectedActivities.includes(activity.id) && (
             <div
               key={activity.id}
               draggable

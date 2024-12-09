@@ -33,8 +33,8 @@ export function Controls({ speed, isSpinning, onSpeedChange, onToggleSpin, onRes
             className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-white"
           />
           <div className="flex justify-between mt-2 text-sm text-gray-300">
-            <span>Speed: {speed.toFixed(1)}</span>
-            <span>{speed > 80 ? 'White Blending' : speed > 50 ? 'Color Blending' : 'Normal'}</span>
+            <span>Velocidad: {speed.toFixed(1)}</span>
+            <span>{speed > 80 ? ' White Blending' : speed > 50 ? ' Color Blending' : ' Normal'}</span>
           </div>
         </div>
 

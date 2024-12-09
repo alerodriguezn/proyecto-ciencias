@@ -18,17 +18,18 @@ export default function NewtonDiskMain() {
 
   return (
     <div className="relative w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800">
-      {/* Info Panel */}
+      {/* Panel de Información */}
       <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md p-6 rounded-lg text-white max-w-md z-10">
         <div className="flex items-center gap-2 mb-3">
           <Info className="w-5 h-5" />
-          <h1 className="text-xl font-bold">Newton&apos;s Disk Experiment</h1>
+          <h1 className="text-xl font-bold">Experimento del Disco de Newton</h1>
         </div>
         <p className="text-gray-200">
-          Click on the disk or use the controls to start/stop the rotation. 
-          Adjust the speed with the slider. At high speeds (80), 
-          the colored segments blend together to appear white, demonstrating how our
-          eyes perceive color mixing. Try different speeds to see the transition!
+          Haz clic en el disco o usa los controles para iniciar/detener la rotación. 
+          Ajusta la velocidad con el deslizador. A altas velocidades (80), 
+          los segmentos de colores se mezclan hasta parecer blancos, demostrando cómo 
+          nuestros ojos perciben la mezcla de colores. ¡Prueba diferentes velocidades 
+          para ver la transición!
         </p>
       </div>
 

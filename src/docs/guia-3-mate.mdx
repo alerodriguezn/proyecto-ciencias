@@ -1,0 +1,87 @@
+import { RabbitGame } from "@/components/game-board";
+
+# Sucesiones y Fibonacci
+
+Leonardo Pisano (alrededor de 1170 -1250) es comúnmente conocido como Fibonacci, fue un comerciante y matemático italiano que introdujo los “nuevos” números indo arábicos a Europa, además, en 1202 escribió un libro titulado Liber Abacci en el cual se explicaba como realizar operaciones utilizando este sistema de numeración y algunas aplicaciones y problemas, además en el capítulo XII, establece un problema relacionado con la cría de conejos que es enormemente apreciado por los matemáticos a través de los siglos, por sus múltiples aplicaciones debido a la generación de una sucesión recursiva que aparece de forma frecuente en la naturaleza por medio de la proporción entre medidas, espirales o el número áureo, entre otros. Bianco et al. (2024)
+
+La espiral de Fibonacci es una figura geométrica que puede ser hallada en la naturaleza por ejemplo en la concha de nautilos, o en las espirales en el centro de los girasoles y en varias otras formaciones naturales, esta figura sigue un patrón geométrico compuesto por la sucesión de Fibonacci y que se puede construir con regla y compás utilizando cuadrados.
+
+<figure className="w-full flex flex-col items-center justify-center mb-2"> <img src="/imgs/docs/gm-3-1.png" alt="Alt text for the image" width="600" height="600" />
+<figcaption >
+Espiral de Fibonacci formada en las olas del mar y en un girasol
+</figcaption>
+</figure>
+
+
+
+
+## ¿Qué es el número áureo?
+
+El número áureo, representado como <code>&phi;</code>, es:
+
+<pre>
+&phi; = (1 + &radic;5) / 2 &asymp; 1.618033989
+</pre>
+
+## Propiedades:
+
+- **Proporción áurea**:
+  <pre>
+  a / b = (a + b) / a
+  </pre>
+- Puede aproximarse dividiendo números consecutivos de la sucesión de Fibonacci. Por ejemplo:
+  <pre>
+  55 / 34 &asymp; 1.6176
+  </pre>
+- **Ángulo áureo**:
+  <pre>
+  &alpha; &asymp; 137.507764&deg;
+  </pre>
+
+---
+
+
+Esta proporción se puede observar en la siguiente figura
+
+<figure className="w-full flex flex-col items-center justify-center mb-2"> <img src="/imgs/docs/gm-3-2.png" alt="Alt text for the image" width="600" height="600" />
+</figure>
+
+
+
+Además, el número áureo se puede aproximar dividiendo dos números cualesquiera que sean tomados de la sucesión de Fibonacci de forma consecutiva, como por ejemplo 55 entre 34, cuyo resultado es 1,6176.
+
+Esta proporción también se puede encontrar en ángulos y en la naturaleza en general, lamedida del ángulo áureo es
+
+<figure className="w-full flex flex-col items-center justify-center mb-2"> <img src="/imgs/docs/gm-3-3.png" alt="Alt text for the image" width="600" height="600" />
+</figure>
+
+
+Incluso en el cuerpo humano, realizando varias proporciones utilizando medidas partes del cuerpo se puede hallar el número áureo, y en la antigüedad se creía que la belleza se podía medir usando este número.
+
+
+<figure className="w-full flex flex-col items-center justify-center mb-2"> <img src="/imgs/docs/gm-3-4.png" alt="Alt text for the image" width="600" height="600" />
+
+<figcaption >
+Hombre de Vitrubio
+</figcaption>
+
+</figure>
+
+## Actividad 
+<RabbitGame/>
+
+
+
+**Referencias Bibliográficas**
+
+Bianco, G., Donatiello, A., Nicchiotti, B. (2024) Fibonacci Numbers between History, Semiotics, and Storytelling: The Birth of Recursive Thinking. Education Sciences, 14 (4), art. no. 394. https://www.scopus.com/inward/record.uri?eid=2-s2.0-85191338456&doi=10.3390%2feducsci14040394&partnerID=40&md5=408975a7a2450d9d ced2694d31476b
+
+Geniolandia. (2018, 1 de febrero). Cómo dibujar una espiral de Fibonacci.
+https://www.geniolandia.com/13103163/como-dibujar-una-espiral-de-fibonacci
+
+Ministerio de Educación Pública (MEP) (2012). Programas de Estudio de Matemáticas: I y II
+Ciclo de la Educación primaria, III Ciclo de la educación General Básica y Educación
+Diversificada, República de Costa Rica.
+
+Shuttleworth, M., Kirkland, M. (2012). guía del educador de jóvenes por los Derechos Humanos herramientas únicas que dan vida a los derechos humanos. Shuttlewoth Leadership Society International. Estados Unidos de América.
+
